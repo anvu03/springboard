@@ -42,6 +42,8 @@ SpringBoard implements a secure authentication system using JWT tokens:
 - Password hashing with ASP.NET Core Identity's PasswordHasher
 - Login with either username or email
 
+> **Important:** The current implementation uses in-memory fake repositories for demonstration purposes. For production use, you should implement proper persistent repositories (e.g., using Entity Framework Core or another ORM/database technology of your choice). See the Customization section for guidance on implementing your own repositories.
+
 ## 🛡️ Exception Handling
 
 The application uses a domain exception hierarchy for business rule violations:
@@ -126,6 +128,36 @@ The template includes a script that allows you to easily rename the solution and
 2. Create a repository interface in the `SpringBoard.Application/Interfaces` folder
 3. Implement the repository in the `SpringBoard.Infrastructure/Persistence/Repositories` folder
 4. Register the repository in the DI container
+
+### Implementing Persistent Repositories
+
+The template uses in-memory fake repositories for demonstration. For a production application:
+
+1. Choose a database technology (e.g., SQL Server, PostgreSQL, MongoDB)
+2. Implement a proper data access layer (e.g., using Entity Framework Core)
+3. Replace the fake repositories in `SpringBoard.Infrastructure/Persistence/Repositories` with actual implementations
+4. Update the `FakeUnitOfWork` to use your actual database context
+5. Configure your database connection in `appsettings.json`
+
+Example using Entity Framework Core:
+```csharp
+public class EfUserRepository : IUserRepository
+{
+    private readonly ApplicationDbContext _dbContext;
+    
+    public EfUserRepository(ApplicationDbContext dbContext)
+    {
+        _dbContext = dbContext;
+    }
+    
+    public async Task<User> GetByIdAsync(Guid id)
+    {
+        return await _dbContext.Users.FindAsync(id);
+    }
+    
+    // Implement other methods...
+}
+```
 
 ### Adding a New Endpoint
 
