@@ -60,12 +60,39 @@ All exceptions are handled globally and mapped to appropriate HTTP status codes 
 
 - [.NET 9 SDK](https://dotnet.microsoft.com/download)
 
+### Renaming the Project
+
+The template includes a script that allows you to easily rename the solution and all projects to match your desired project name:
+
+1. Make the script executable (if needed)
+   ```bash
+   chmod +x rename-project.sh
+   ```
+
+2. Run the script with your desired project name
+   ```bash
+   ./rename-project.sh TestProject YourProjectName
+   ```
+
+3. The script will:
+   - Rename all project directories and files
+   - Update all namespaces and references in code files
+   - Update the solution file
+   - Skip binary files and files listed in .gitignore
+
+4. Build the solution to verify all references are updated correctly
+   ```bash
+   dotnet build
+   ```
+
+> **Note:** After renaming, you may need to reload your IDE to see all changes. Also, remember to manually check any custom build scripts, Docker files, or CI/CD configurations.
+
 ### Running the Application
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/springboard.git
-   cd springboard
+   git clone https://github.com/yourusername/testproject.git
+   cd testproject
    ```
 
 2. Build the solution
