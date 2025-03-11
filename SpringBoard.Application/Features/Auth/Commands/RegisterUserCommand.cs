@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Identity;
 using SpringBoard.Application.Abstractions.Persistence;
 using SpringBoard.Domain.Entities;
 using SpringBoard.Domain.Exceptions;
-using System.Text.RegularExpressions;
 
 namespace SpringBoard.Application.Features.Auth.Commands;
 

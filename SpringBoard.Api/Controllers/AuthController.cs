@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using SpringBoard.Api.Models.Auth;
 using SpringBoard.Application.Abstractions.Services;
 using SpringBoard.Application.Features.Auth.Commands;
-using SpringBoard.Application.Features.Auth.Models;
 
 namespace SpringBoard.Api.Controllers;
 

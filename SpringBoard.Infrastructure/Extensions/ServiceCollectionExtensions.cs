@@ -3,13 +3,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using SpringBoard.Application.Abstractions.Persistence;
 using SpringBoard.Application.Abstractions.Persistence.Repositories;
 using SpringBoard.Application.Abstractions.Services;
 using SpringBoard.Infrastructure.Options;
 using SpringBoard.Infrastructure.Persistence.Repositories;
 using SpringBoard.Infrastructure.Services;
-using System;
 using System.Text;
 
 namespace SpringBoard.Infrastructure.Extensions;

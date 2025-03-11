@@ -5,14 +5,10 @@ using SpringBoard.Application.Abstractions.Persistence;
 using SpringBoard.Application.Abstractions.Services;
 using SpringBoard.Domain.Entities;
 using SpringBoard.Infrastructure.Options;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace SpringBoard.Infrastructure.Services;
 

@@ -2,7 +2,6 @@ using MediatR;
 using SpringBoard.Application.Abstractions.Persistence;
 using SpringBoard.Application.Abstractions.Services;
 using SpringBoard.Application.Features.Auth.Models;
-using SpringBoard.Domain.Entities;
 using SpringBoard.Domain.Exceptions;
 using System.Security.Cryptography;
 
